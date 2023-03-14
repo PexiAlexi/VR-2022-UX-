@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
     public AudioClip clipsound;
     public AudioSource alarmsound;
     public AudioClip alarmclip;
+    public Animator animator;
 
     private bool isRunning = false;
 
@@ -41,6 +42,9 @@ public class Timer : MonoBehaviour
                     objectToDisable.SetActive(false);
                 }
                
+                    animator.Play("Porten öppnas");
+             
+
             }
         }
     }
