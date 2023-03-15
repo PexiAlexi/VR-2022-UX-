@@ -9,13 +9,18 @@ public class Timer : MonoBehaviour
     public Color textColor = Color.white;
     public Color timeoutColor = Color.red;
     public GameObject objectToDisable;
+    public GameObject objectToDisable2;
     public AudioSource ticksource;
     public AudioClip clipsound;
     public AudioSource alarmsound;
     public AudioClip alarmclip;
     public Animator animator;
+    public GameObject partikel;
 
     private bool isRunning = false;
+    private bool stopTimer = false;
+    private int minutesStopped = 0;
+    private int secondsStopped = 0;
 
     void Start()
     {
@@ -25,7 +30,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (isRunning)
+        if (isRunning && !stopTimer)
         {
             timeRemaining -= Time.deltaTime;
 
@@ -40,12 +45,32 @@ public class Timer : MonoBehaviour
                 if (objectToDisable != null)
                 {
                     objectToDisable.SetActive(false);
+                    objectToDisable2.SetActive(false);
                 }
                
                     animator.Play("Porten öppnas");
              
 
             }
+
+           
+        }
+
+        if (stopTimer == true)
+
+        {
+            isRunning = false;
+            timeText.color = Color.blue;
+            ticksource.Stop();
+            if (objectToDisable != null)
+            {
+                objectToDisable.SetActive(false);
+            }
+            animator.Play("Porten öppnas");
+            minutesStopped = Mathf.FloorToInt(timeRemaining / 60);
+            secondsStopped = Mathf.FloorToInt(timeRemaining % 60);
+            timeRemaining = secondsStopped;
+            partikel.SetActive(false);
         }
     }
 
@@ -62,5 +87,20 @@ public class Timer : MonoBehaviour
         startButton.gameObject.SetActive(false);
         ticksource.Play();
 
+    }
+
+    public void StopTimer()
+    {
+        stopTimer = true;
+    }
+
+    public int GetMinutesStopped()
+    {
+        return minutesStopped;
+    }
+
+    public int GetSecondsStopped()
+    {
+        return secondsStopped;
     }
 }
