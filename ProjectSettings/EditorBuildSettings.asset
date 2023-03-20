@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/BNG Framework/Scenes/Scene Transitioning.unity
     guid: 9d7c9629abf9c99449e358b0938b47d0
-  - enabled: 1
+  - enabled: 0
     path: Assets/BNG Framework/Scenes/Physics Hands.unity
     guid: 34a4579517c578e4080d0a6ef2c96294
   - enabled: 0
@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/BNG Framework/Scenes/Quest Demo.unity
     guid: eac0312c32df12949a47d07747a9d1cd
+  - enabled: 1
+    path: Assets/Scenes/Starten.unity
+    guid: 3dbf10c13fd2b3842a5ff2f57aa2af68
+  - enabled: 1
+    path: Assets/Scenes/Spelet.unity
+    guid: 5dec4dde8a832544ba41160b8bec9fd8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 553dde8f9e9b1c448affad55389778ab,
       type: 2}
