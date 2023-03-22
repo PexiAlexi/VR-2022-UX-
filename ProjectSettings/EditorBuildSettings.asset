@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Spelet.unity
     guid: 5dec4dde8a832544ba41160b8bec9fd8
+  - enabled: 1
+    path: Assets/Scenes/Slutet.unity
+    guid: ae85e21c4f19a924dbed0bf09598b4ae
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 553dde8f9e9b1c448affad55389778ab,
       type: 2}
